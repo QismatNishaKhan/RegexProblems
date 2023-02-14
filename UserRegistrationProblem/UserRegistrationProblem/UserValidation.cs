@@ -9,6 +9,7 @@ namespace UserRegistrationProblem
 {
     public class UserValidation
     {
+
         public const string FIRST_NAME_REGEX = "^[A-Z][a-zA-Z]{2}$";
         public void ValidationFirstName(string firstname)
         {
@@ -41,6 +42,14 @@ namespace UserRegistrationProblem
         {
             Regex regex = new Regex(MOBILENUMBER_REGEX);
             bool result = regex.IsMatch(phonenumber);
+            Console.WriteLine(result);
+        }
+        //UC5 Password Validation minum 8 Character
+        public const string PASSWORD_REGEX = "[a-z,A-Z,0-9]{8,}$";
+        public void ValidationPassword(string password)
+        {
+            Regex regex = new Regex(PASSWORD_REGEX);
+            bool result = regex.IsMatch(password);
             Console.WriteLine(result);
         }
     }
